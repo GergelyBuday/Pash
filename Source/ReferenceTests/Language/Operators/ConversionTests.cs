@@ -15,6 +15,12 @@ namespace ReferenceTests.Language.Operators
         {
             ExecuteAndCompareTypedResult(cmd, expected);
         }
+        
+        [TestCase("[int]$x1 = 1", 1, Explicit = true)]
+        public void SimpleConversionWithAssignmentWorks(string cmd, object expected)
+        {
+            ExecuteAndCompareTypedResult(cmd, expected);
+        }
 
         [TestCase("[int][string]5", 5)]
         [TestCase("[Byte][char]'5'", (byte) '5')]
